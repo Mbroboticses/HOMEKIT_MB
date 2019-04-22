@@ -1,0 +1,5 @@
+esptool.py --port COM7 flash_id
+
+esptool.py --port COM7 erase_flash
+
+esptool.py --port COM7 --baud 115200 write_flash -fs 1MB -fm dout -ff 40m \ 0x0 rboot.bin 0x1000 blank_config.bin 0x2000 main.bin
